@@ -135,3 +135,23 @@ footer {
     }
   }
 </style>
+
+/* Double line under the heading */
+.double-line {
+  border-top: 3px double #ccc;
+  width: 100%;
+}
+
+/* Custom image style */
+.quality-img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* List item styling */
+.quality-list li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.6;
+}
