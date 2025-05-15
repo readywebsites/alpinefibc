@@ -158,3 +158,11 @@ footer {
 .hover-click-dropdown .dropdown-menu {
   transition: all 0.3s ease;
 }
+
+/* Show Bootstrap dropdown on hover */
+@media (min-width: 992px) {
+  .hover-dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
