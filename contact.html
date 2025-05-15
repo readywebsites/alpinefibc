@@ -117,98 +117,65 @@
         <p>+91 90990 82108<br>hr@alpinefibc.com</p>
       </div>
     </div>
-<!-- Inquiry Form Section -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center">
+
+    <!-- Inquiry Form -->
+    <div class="row align-items-center bg-light p-4">
       <div class="col-md-6 mb-4 mb-md-0">
-        <form id="inquiryForm">
+        <form>
           <div class="mb-3">
-            <input type="text" class="form-control" id="name" placeholder="Your Name (Required)" required>
+            <input type="text" class="form-control" placeholder="Your Name (Required)" required>
           </div>
           <div class="mb-3">
-            <input type="email" class="form-control" id="email" placeholder="Your Email (Required)" required>
+            <input type="email" class="form-control" placeholder="Your Email (Required)" required>
           </div>
           <div class="mb-3">
-            <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
+            <input type="text" class="form-control" placeholder="Your Mobile">
           </div>
           <div class="mb-3">
-            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+            <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
           </div>
           <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="recaptcha" required>
+            <input type="checkbox" class="form-check-input" id="recaptcha">
             <label class="form-check-label" for="recaptcha">I’m not a robot</label>
           </div>
           <button type="submit" class="btn btn-primary">SEND</button>
         </form>
       </div>
+      <div class="col-md-6 text-center">
+        <img src="images/contact-1-1.jpg" class="img-fluid rounded shadow" alt="Contact Icons">
+      </div>
     </div>
   </div>
 </section>
-
-<!-- Success Popup -->
-<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content text-center p-4">
-      <h5 class="modal-title text-success">Thank you!</h5>
-      <p>Your inquiry has been submitted successfully.</p>
-      <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+<!-- Footer -->
+<footer class="bg-primary text-white pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h6 class="fw-bold">Certification</h6>
+        <img src="images/certificate.png" alt="Certificate" class="img-fluid" />
+      </div>
+      <div class="col-md-4 mb-4">
+        <h6 class="fw-bold">Main Menu</h6>
+        <ul class="list-unstyled">
+          <li><a href="about.html" class="text-white d-block mb-1">About Us</a></li>
+          <li><a href="quality.html" class="text-white d-block mb-1">Quality</a></li>
+          <li><a href="infrastructure.html" class="text-white d-block mb-1">Infrastructure</a></li>
+          <li><a href="certification.html" class="text-white d-block mb-1">Certification</a></li>
+          <li><a href="blog.html" class="text-white d-block mb-1">Blog</a></li>
+          <li><a href="contact.html" class="text-white d-block mb-1">Contact us</a></li>
+          <li><a href="career.html" class="text-white d-block mb-1">Career</a></li>
+          <li><a href="#" class="text-white d-block mb-1">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h6 class="fw-bold">Quick Contact Us</h6>
+        <p><strong>Alpine FIBC Pvt Ltd</strong></p>
+        <p>A 1206-1207 "The Capital", Nr. Hetarth Party Plot, Science City Road, Sola, Ahmedabad, Gujarat–380060, India.</p>
+        <p>Email: info@alpinefibc.com / sales@alpinefibc.com</p>
+        <p>Phone: +91 90990 82104</p>
+      </div>
     </div>
-  </div>
-</div>
-
-<!-- Include EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  // Initialize EmailJS with your user ID
-  emailjs.init("YOUR_USER_ID"); // <-- Replace with your EmailJS user ID
-</script>
-
-<!-- JavaScript -->
-<script>
-  document.getElementById("inquiryForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    // Form field values
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const mobile = document.getElementById("mobile").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    // Validate recaptcha checked (already required attribute, so just double check)
-    if (!document.getElementById("recaptcha").checked) {
-      alert("Please confirm you are not a robot.");
-      return;
-    }
-
-    // Prepare WhatsApp message
-    const whatsappMessage = `New Inquiry:%0AName: ${name}%0AEmail: ${email}%0AMobile: ${mobile}%0AMessage: ${message}`;
-    const whatsappNumber = "+918734899793"; // <-- Replace with your WhatsApp number including country code
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-    // Send Email via EmailJS
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-      name: name,
-      email: email,
-      mobile: mobile,
-      message: message
-    }).then(function(response) {
-      console.log('Email sent successfully!', response.status, response.text);
-
-      // Open WhatsApp in new tab only after email sent
-      window.open(whatsappURL, "_blank");
-
-      // Show success popup
-      const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-      successModal.show();
-
-      // Clear form
-      document.getElementById("inquiryForm").reset();
-    }, function(error) {
-      console.error('Failed to send email:', error);
-      alert("Sorry, there was an error sending your message. Please try again later.");
-    });
-  });
     <div class="text-center border-top border-white pt-3 pb-4 small">
       COPYRIGHTS © 2025, <strong>ALPINE FIBC PVT. LTD.</strong> | ALL RIGHTS RESERVED. POWERED BY 
       <a href="#" class="text-white text-decoration-none"><strong>8WEBCOM.COM</strong></a>
